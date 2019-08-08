@@ -5,9 +5,7 @@ let myFunction = () => {
  };
  myFunction();
 
-let anotherFunction = (param) => {
-   return param;
- };
+let anotherFunction = (param) => param; 
  anotherFunction("Example");
 
 let add = (param1, param2) => {
@@ -20,6 +18,9 @@ let subtract = (param1, param2) => {
  };
  subtract(1,2);
 
+console.log (anotherFunction("Example"));
+console.log (add(1,2));
+console.log (subtract(1,2));
 
 // Stretch
 

@@ -11,46 +11,46 @@
 
 // Example format of an intern object: 1,examples@you.edu,Example,F
 const example = {
-  "id": 0,
-  "name": "Example",
-  "email": "examples@you.edu",
-  "gender": "F"
+  id: 0,
+  name: "Example",
+  email: "examples@you.edu",
+  gender: "F"
 }
 
 // Write your intern objects here:
 const intern1 = {
-  'id': 1,
-  'email': 'mmelloy0@psu.edu',
+  id: 1,
+  email: 'mmelloy0@psu.edu',
   'first name': 'Mitzi',
-  'gender': 'F',
+  gender: 'F',
 };
 
 const intern2 = {
-  'id': 2,
-  'email': 'kdiben1@tinypic.com',
+  id: 2,
+  email: 'kdiben1@tinypic.com',
   'first name': 'Kennan',
-  'gender': 'M',
+  gender: 'M',
 };
 
 const intern3 = {
-  'id': 3,
-  'email': 'kmummery2@wikimedia.org',
+  id: 3,
+  email: 'kmummery2@wikimedia.org',
   'first name': 'Keven',
-  'gender': 'M',
+  gender: 'M',
 };
 
 const intern4 = {
-  'id': 4,
-  'email': 'gmartinson3@illinois.edu',
+  id: 4,
+  email: 'gmartinson3@illinois.edu',
   'first name': 'Gannie',
-  'gender': 'M',
+  gender: 'M',
 };
 
 const intern5 = {
-  'id': 5,
-  'email': 'adaine5@samsung.com',
+  id: 5,
+  email: 'adaine5@samsung.com',
   'first name': 'Antonietta',
-  'gender': 'F',
+  gender: 'F',
 };
 
 
@@ -96,16 +96,28 @@ console.log(intern5.multiplyNums(3,4));
 // 3. Nest a grandchild object in the child object with properties for name and age.  The name will be Sam and the age will be 30
 // 4. Give each of the objects the ability to speak their names using the this keyword.
 
-const parent = {}
+const parent = {name:'Susan', age:70};
+parent.child = {name: 'George', age:50};
+parent.child.grandchild = {name: 'Sam', age: 30};
+parent.speak = function() {
+  return this.name;
+}
+parent.child.speak = function() {
+  return this.name;
+}
+parent.child.grandchild.speak = function() {
+  return this.name;
+}
 
 // Log the parent object's name
-
+console.log(parent.name);
 // Log the child's age
-
+console.log(parent.child.age);
 // Log the name and age of the grandchild
-
+console.log(parent.child.grandchild.name + "," + parent.child.grandchild.age);
 // Have the parent speak
-
+console.log(parent.speak());
 // Have the child speak
-
+console.log(parent.child.speak());
 // Have the grandchild speak
+console.log(parent.child.grandchild.speak());
